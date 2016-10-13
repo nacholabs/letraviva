@@ -1,0 +1,80 @@
+body  {font-family:sans-serif;margin:0;padding:0;font-size: 3.75vw;overflow:hidden;background-color: #efefef;background-position:center center;background-size:cover;background-repeat: no-repeat;height: 100vh;}
+
+* {box-sizing:border-box;}
+input,textarea,select {font:inherit;border:none;background:none;resize:none;outline:none;}
+
+h1,h2,h3,h4,h5,h6 {font-size:100%;text-decoration:underline;letter-spacing:0.1em;}
+
+button{outline:none;background: #000; border: none; color: #f4f4f4; font-size: 110%; font-weight: 900; }
+
+#screen {position: fixed;left: 0;top: 0;/* width: 100%; *//* height: 100%; */overflow: hidden;right: 0;bottom: 0;}
+
+#mirror {position: absolute;left:0;right:0;top:0;bottom:0;z-index:999;opacity: 0;width: 100%;display: none;}
+#mirror.off {z-index:-1;}
+.c {color:#ddd;font-weight: 500;transform: scale(0.75);opacity: 0.75;transition: all 0.5s, transform 0.3s cubic-bezier(0.4, 0.04, 0.4, 0.97),top 0.5s cubic-bezier(0.84, -0.13, 0.41, 1.15);position: absolute;left:0;top:0;height: 100vh;width: 100vw;display:flex;justify-content: center;align-items:center;flex-direction: column;background: #fff;}
+.i,pre {max-width: 92vw;max-height: 92vh;overflow:hidden;/* transition: all 0.5s ease-out; */}
+.c.txt {/* white-space: pre-wrap; *//* word-break: break-word; *//* letter-spacing: 0.05em; *//* line-height: 1.5em; */}
+.c .i,.c pre{min-width: 75vw;min-height: 75vh;color: inherit;letter-spacing: -0.04em;white-space: pre-wrap;}
+.c.txt.h1 {font-size:180%;font-weight:200;text-align:center;}
+.c.txt.h1 .i,.c.txt.h1 pre {min-height: 0;text-align: center;}
+.c.txt.h2 {font-size:150%;font-weight:900;}
+.c.txt.quote {font-style:italic;}
+.c input {width: 60%;text-align:center;font-size: 45%;/* padding: 1vh 0; */font-weight: 400;color: #000;transition: opacity 1s;margin: -2em 0 0;opacity: 0;}
+.c input.off {color: rgba(238, 238, 238, 0.2);}
+.c input:focus {opacity: 0.1;}
+.c iframe {width: 100%; height: 100%; border: none; }
+.c .in {width: 90vw;opacity:0;height:0;transition:opacity 0.5s ease-out,height 0.5s ease-out;overflow: hidden;}
+.c .in.on {opacity:1;}
+.c.img {}
+.c .im {width: 100vw;background-position:center center;background-size:contain;background-repeat: no-repeat;}
+.c .im.on {height: 70vh;}
+.c.video {}
+.c .vi {background:#eee;}
+.c .vi.on {height: 46vw;max-height: 70vh;}
+.c.frame {}
+.c .fr {background:#eee;border: solid #eee;}
+.c .fr.on {height:75vh;}
+.c .in+.flex-text-wrap .i,.c .in+.flex-text-wrap pre {max-height: 24vh;min-height:0;font-size: 80%;margin-top: 1em;text-align: center;}
+.c.txt.p {}
+.c.txt.p .i,.c.txt.p pre {min-height: 0; max-height: 60vh; margin: 0 0 30vh; }
+.c.post {top: 100vh;}
+.c.pre {top: -100vh;}
+.c.on {top: 0;transform:scale(1);color:#000;opacity: 1;transition: all 0.5s, transform 0.7s cubic-bezier(0.92, 0.01, 0.4, 1),top 0.5s cubic-bezier(0.57, -0.07, 0.41, 1.15);}
+
+body.freaking .c {background:none;transition: none !important;color:#fff !important;}
+
+#dz {position: fixed; top: 0; left: 0; right:0; bottom:0; background: rgba(243, 243, 243, 0.9); z-index: 10; font-size: 24px; pointer-events:none; transition:opacity 0.3s; opacity:0; }
+#dz.on {opacity:1;}
+#dz:before {content:"Arrastrar imágenes para registrar como recursos.";opacity: 0.5;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);}
+
+#res {position: fixed;right: -25%;transition: right 0.3s cubic-bezier(0.58, 0.02, 0.07, 1);pointer-events:none;top: 0;bottom: 0;width: 25%;background: rgba(243, 243, 243, 0.9);z-index: 8;font-size: 24px;overflow:auto;}
+#res.on {right:0;pointer-events:all;}
+#res form {padding: 0.5em 1em 1em;}
+#res form input{border-bottom: solid 1px; width: 100%; }
+#res form button{width: 25%; float: right; line-height: 1em; }
+#res form #tag{margin-bottom: 0.5em; }
+#res form #url{width: 75%; }
+#res ul{margin: 0; padding: 0; list-style: none; }
+#res ul li{position: relative;border-top: solid 1px #ccc;}
+#res ul li span {position: absolute;right: 0;width: 25%;top: 0;bottom: 0;text-align: center;background-position: center center;background-size: cover;background-repeat: no-repeat;font-size: 50%;display: flex;justify-content: center;align-items: center;font-weight: 900;}
+#res ul li span a{}
+#res ul li span img{max-width: 100%; max-height: 100%; }
+#res ul li input{width: 75%; padding: 0.5em; }
+#res ul li.enter,#res ul li:hover{background: rgba(204, 204, 204, 0.5); cursor:pointer;}
+#res ul li.enter:after{content:"ENTER para insertar";font-size: 12px;background: #000;color: #e1e1e1;padding: 0.5em;display: block;width: 75%;box-sizing: border-box;}
+
+#h {position: absolute;left: 0;right: 0;bottom: -4em;text-align: center;padding: 0em 1em 1em;font-size: 70%;text-transform: uppercase;letter-spacing: 0.02em;color: #b6b6b6;transition: bottom 0.5s;/* font-weight: 300; */z-index: 1;}
+#h.on {bottom: 0; }
+
+.flex-text-wrap {position: relative; zoom: 1; }
+textarea, .flex-text-wrap {padding-bottom: 0 !important; }
+.flex-text-wrap textarea, .flex-text-wrap pre {white-space: pre-wrap; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; white-space: pre; word-wrap: break-word; }
+.flex-text-wrap textarea {overflow: hidden; position: absolute; top: 0; left: 0; height: 100%; width: 100%; resize: none; height: 94%; width: 94%; }
+.flex-text-wrap pre {display: block; visibility: hidden; margin: 0; }
+textarea, .flex-text-wrap pre {}
+
+#save {position: fixed; font-size: 20px; top: 0; bottom: 0; left: 0; right: 0; background: #fff; border: solid 2em rgb(244, 244, 244); pointer-events: none; z-index: 9; display: none; }
+#save.on {display: block; pointer-events: all;}
+#save pre {max-width: none;max-height: none;overflow: auto;margin: 0;padding: 2em 2em 10em;position:absolute;top:0;bottom:0;left:0;right:0;word-wrap: break-word;word-break: break-all;white-space: pre-wrap;}
+#save p {position: absolute; bottom: 0; left: 0; right: 0; padding: 2em; margin: 0;border-top:solid 1px #ddd; background:#fff;}
+#save button {float: right; padding:0.5em 1em; margin: -0.5em -0.5em -1em; }

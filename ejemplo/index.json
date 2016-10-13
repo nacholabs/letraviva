@@ -1,0 +1,14 @@
+{
+
+    "cards":[
+        {"cl":"h1","txt":"Presentación de muestra"},
+        {"res":"gatito","txt":":3"},
+        {"txt":"Yo diría que viene bastante bien, ¿no?"}
+    ],
+
+    "res":[
+        {"t":"img","tag":"gatito","url":"sample/gatito.jpeg"},
+        {"t":"video","tag":"gatitos","url":"https://www.youtube.com/watch?v=AkQOYYIxd_I"}
+    ]    
+
+}
