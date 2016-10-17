@@ -348,17 +348,9 @@ $(function(){
 
 // init
 
-    //$.getJSON('letraviva/freak.json',function(r){ window.freak=r; });
-    if(typeof(window.localStorage['open'])!='undefined'){
-        $.getJSON(window.localStorage['open']+'/index.json',function(r){
-            window.index=r;
-            load();
-        });
-        delete(window.localStorage['open']);
-    }else{
-        window.index={res:[],cards:[]};
-        card();
-    }
+    window.index={res:[],cards:[]};
+    card();
+    
 });
 
 
