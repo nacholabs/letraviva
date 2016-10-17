@@ -26,7 +26,7 @@ Herramienta para performances de texto instantáneo en vivo. Permite crear una p
 <kbd>Alt</kbd> + <kbd>Z</kbd> = Modo apocalipsis
 <kbd>Alt</kbd> + <kbd>J</kbd> = Ejecutar diapositiva como javascript (modo livecoding)
 
-<kbd>Alt</kbd> es <kbd>Ctrl</kbd> y <kbd>Cmd</kbd> donde se permita.
+<kbd>Alt</kbd> es intercambiable <kbd>Ctrl</kbd> y <kbd>Cmd</kbd> donde se permita.
 
 
 ## Presentaciones y recursos
