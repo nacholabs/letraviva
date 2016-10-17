@@ -141,6 +141,8 @@ window.load=function(){
     for(r in index.res)
         res(index.res[r].url,index.res[r].tag,index.res[r].t,r);
     // cargar diapositivas
+    if(index.cards.length)
+        $('.c').remove();
     for(c in index.cards){
         if(index.cards[c].res)
             for(r in index.res)
@@ -304,21 +306,21 @@ $(function(){
 
     $(document).on('drop',function(ev){
         $('#dz').removeClass('on');
-        var path=prompt('RUTA A LAS IMÁGENES');
+        var path=prompt('RUTA A LA CARPETA');
         ev.preventDefault();
         var dt = ev.originalEvent.dataTransfer;
-        if (dt.items) {
-            for (var i=0; i < dt.items.length; i++) {
-                if (dt.items[i].kind == "file") {
-                    var f = dt.items[i].getAsFile();
-                    res(path+'/'+f.name,null,'img');
-                }
-            }
-        } else {
-            for (var i=0; i < dt.files.length; i++) {
-                var f = dt.files[i];
+        for (var i=0; i < dt.files.length; i++) {
+            var f = dt.files[i];
+            if(f.type=='application/json'){
+                var r1=new FileReader();
+                r1.onload =  function(e) {
+                    window.index=JSON.parse(e.target.result);
+                    load();
+                };
+                r1.readAsText(dt.files[0]);
+            }else if(f.type.match('image.*')){
                 res(path+'/'+f.name,null,'img');
-            }  
+            }
         }
         return false;
     });

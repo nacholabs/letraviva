@@ -22,12 +22,11 @@ Herramienta para performances de texto instantáneo en vivo. Permite crear una p
 <kbd>Alt</kbd> + <kbd>⇤</kbd> = Borrar diapositiva
 
 <kbd>Alt</kbd> + <kbd>S</kbd> = Exportar presentación
-<kbd>Alt</kbd> + <kbd>O</kbd> = Abrir presentación
 
 <kbd>Alt</kbd> + <kbd>Z</kbd> = Modo apocalipsis
 <kbd>Alt</kbd> + <kbd>J</kbd> = Ejecutar diapositiva como javascript (modo livecoding)
 
-<kbd>Alt</kbd> = <kbd>Ctrl</kbd> y <kbd>Cmd</kbd> donde lo permita
+<kbd>Alt</kbd> es <kbd>Ctrl</kbd> y <kbd>Cmd</kbd> donde se permita.
 
 
 ## Presentaciones y recursos
@@ -51,18 +50,7 @@ La etiqueta sirve para encontrar rápidamente un recurso en una performance en v
 - Opcional: agregar videos o URLs al gestor.
 - Opcional: crear diapositivas. Las diapositivas creadas al momento de exportar son guardadas y recuperadas automáticamente al abrir la presentación.
 - Exportar presentación (<kbd>Alt</kbd> + <kbd>S</kbd>). Guardar el código que muestra LETRAVIVA en un archivo index.json adentro de la carpeta con las imágenes.
-- Abrir presentación (<kbd>Alt</kbd> + <kbd>O</kbd>). Simplemente ingresar el nombre de la carpeta.
-
-
-## Deshabilitar seguridad de Chrome
-
-Workaround vergonzoso de momento: para abrir presentaciones hace falta abrir chrome con --disable-web-security. O LETRAVIVA en un servidor local.
-
-Windows:
-chrome.exe --disable-web-security
-
-Mac:
-open /Applications/Google\ Chrome.app/ --args --disable-web-security
+- Abrir presentación: arrastrar a LETRAVIVA el index.json. Ignorar el diálogo pidiendo la ruta.
 
 
 ## Gestión avanzada
